@@ -382,7 +382,7 @@ function getUrl() {
 	
 	var baseUrl = $('#input_baseUrl').val();
 	var apiType = $('#openshift_api_type  option:selected').val();
-	var apiVersion = $('#openshift_api_version option:selected').val();
+	var apiVersion = $('#openshift_api_version').val();
 	
 	return baseUrl + "/swaggerapi/" + apiType + "/" + apiVersion;
 	

@@ -25,7 +25,7 @@ First, make sure your user is logged in
 
 Once your user has been logged in, you can obtain the authentication token from this session 
 
-```oc whoami -t``
+```oc whoami -t```
 
 This will print out the authentication token which you can input into the Swagger UI in a subsequent step.
 
