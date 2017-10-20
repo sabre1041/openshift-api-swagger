@@ -33,13 +33,9 @@ This will print out the authentication token which you can input into the Swagge
 
 The easiest way to get started is to clone this repository to your local machine and launching the *index.html* page
 
-At the top of the page, you are presented with a series of textbooks and dropdown. 
+At the top of the page, you are presented with two input fields: 
 
 * **OpenShift Master URL** - HTTP endpoint for OpenShift Master. For example https://master.ose.example.com
-* **API Type**: Chose the API that you would like to browse (OpenShift or Kubernetes)
-* **API Version** - Choose the API version you would like to browse
-* **User Token** - Enter the value of the token for the authenticated user obtained in the previous step
+* **OAuth Token** - Enter the value of the token for the authenticated user obtained in the previous step
 
 Hit the **Explore** to begin traversing the API. Consult the [Swagger Documentation](http://swagger.io/getting-started/)on how to use the Swagger UI. 
-
-
