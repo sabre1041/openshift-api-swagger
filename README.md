@@ -21,11 +21,15 @@ The OpenShift CLI can be used to obtain an authentication token that can used in
 
 First, make sure your user is logged in
 
-```oc login <server>```
+```
+oc login <server>
+```
 
 Once your user has been logged in, you can obtain the authentication token from this session 
 
-```oc whoami -t```
+```
+oc whoami -t
+```
 
 This will print out the authentication token which you can input into the Swagger UI in a subsequent step.
 
@@ -39,3 +43,27 @@ At the top of the page, you are presented with two input fields:
 * **OAuth Token** - Enter the value of the token for the authenticated user obtained in the previous step
 
 Hit the **Explore** to begin traversing the API. Consult the [Swagger Documentation](http://swagger.io/getting-started/)on how to use the Swagger UI. 
+
+If the Swagger spec fails to load, you may need to configure OpenShift to support [cross-origin](http://www.w3.org/TR/cors/) requests. Additional steps are found in the OpenShift [documentation](https://docs.openshift.com/container-platform/3.6/architecture/infrastructure_components/web_console.html).
+
+# Deployment to OpenShift
+
+A [template](https://docs.openshift.com/container-platform/latest/dev_guide/templates.html) is available for a streamlined deployment to OpenShift. Use the following steps to deploy the application:
+
+Login to a cluster and create a new project:
+
+```
+oc new-project <project-name>
+```
+
+Instantiate the [openshift-api-swagger](openshift-api-swagger-template.yml) template:
+
+```
+oc apply -f openshift-api-swagger-template.yml | oc apply -f-
+```
+
+Navigate to _host_ specified in the route that has been created:
+
+```
+oc get routes openshift-api-swagger
+```
