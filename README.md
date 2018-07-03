@@ -59,7 +59,7 @@ oc new-project <project-name>
 Instantiate the [openshift-api-swagger](openshift-api-swagger-template.yml) template:
 
 ```
-oc apply -f openshift-api-swagger-template.yml | oc apply -f-
+oc process -f openshift-api-swagger-template.yml | oc apply -f-
 ```
 
 Navigate to _host_ specified in the route that has been created:
