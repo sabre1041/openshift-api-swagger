@@ -1,7 +1,7 @@
 openshift-api-swagger
 =================
 
-Visualization of the OpenShift V3 Rest API using [Swagger](http://swagger.io)
+Visualization of the OpenShift V4 Rest API using [Swagger](http://swagger.io)
 
 
 # Overview
@@ -35,20 +35,20 @@ This will print out the authentication token which you can input into the Swagge
 
 # Running
 
-The easiest way to get started is to clone this repository to your local machine and launching the *index.html* page
+The easiest way to get started is to clone this repository to your local machine and launching the *index.html* page within the `swagger-dist` directory.
 
 At the top of the page, you are presented with two input fields: 
 
-* **OpenShift Master URL** - HTTP endpoint for OpenShift Master. For example https://master.ose.example.com
+* **OpenShift OpenAPI  URL** - HTTP endpoint for OpenShift OpenShift OpenAPI endpoint. For example https://api.openshift.example.com/openapi/v2
 * **OAuth Token** - Enter the value of the token for the authenticated user obtained in the previous step
 
 Hit the **Explore** to begin traversing the API. Consult the [Swagger Documentation](http://swagger.io/getting-started/)on how to use the Swagger UI. 
 
-If the Swagger spec fails to load, you may need to configure OpenShift to support [cross-origin](http://www.w3.org/TR/cors/) requests. Additional steps are found in the OpenShift [documentation](https://docs.openshift.com/container-platform/3.6/architecture/infrastructure_components/web_console.html).
+If the Swagger spec fails to load, you may need to configure OpenShift to support [cross-origin](http://www.w3.org/TR/cors/) requests. Additional steps are found in the OpenShift [documentation](https://docs.openshift.com/container-platform/4.13/security/allowing-javascript-access-api-server.html).
 
 # Deployment to OpenShift
 
-A [template](https://docs.openshift.com/container-platform/latest/dev_guide/templates.html) is available for a streamlined deployment to OpenShift. Use the following steps to deploy the application:
+A [template](https://docs.openshift.com/container-platform/4.13/openshift_images/using-templates.html) is available for a streamlined deployment to OpenShift. Use the following steps to deploy the application:
 
 Login to a cluster and create a new project:
 
@@ -59,7 +59,7 @@ oc new-project <project-name>
 Instantiate the [openshift-api-swagger](openshift-api-swagger-template.yml) template:
 
 ```
-oc apply -f openshift-api-swagger-template.yml | oc apply -f-
+oc process -f openshift-api-swagger-template.yml | oc apply -f-
 ```
 
 Navigate to _host_ specified in the route that has been created:
