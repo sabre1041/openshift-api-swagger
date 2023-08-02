@@ -1,10 +1,10 @@
 import SwaggerUI from 'swagger-ui'
 import 'swagger-ui/dist/swagger-ui.css';
 
-#const spec = require('./swagger-config.yaml');
+//const spec = require('./swagger-config.yaml');
 
 const ui = SwaggerUI({
-#  spec,
+//  spec,
   dom_id: '#swagger',
 });
 
