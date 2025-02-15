@@ -6,7 +6,7 @@ Visualization of the OpenShift V4 Rest API using [Swagger](http://swagger.io)
 
 # Overview
 
-This application provides an interface to the OpenShift V3 Rest API. It can be run either on a local machine, deployed to an Application server or within Docker. 
+This application provides an interface to the OpenShift V4 Rest API. It can be run either on a local machine, deployed to an Application server or within Docker. 
 
 The Swagger UI communicates to OpenShift via REST. 
 
